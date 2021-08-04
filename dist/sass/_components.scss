@@ -1,0 +1,518 @@
+////////////////////////////////////
+// GLOBAL ICON COMPONENT
+.icon {
+    &--yellow {
+        fill: #cfbb00 !important;
+    }
+    
+    &--small {
+        width: 1rem;
+        height: 1rem;
+        fill: var(--primary-text-color);
+    }
+    
+    &--medium {
+        width: 2rem;
+        height : 2rem;
+        fill: var(--primary-text-color);
+    }
+    
+    &--big {
+        width: 4rem;
+        height: 4rem;
+        fill: var(--primary-text-color);
+    }
+
+}
+
+
+
+////////////////////////////////////
+// SEARCH COMPONENT
+
+.search {
+    padding: 2rem 4.5rem; 
+    display: flex;
+    align-items: center;
+
+    &__input {
+        width: 75%;
+
+        font-size: 1.5rem;
+        color: inherit;
+        
+        padding: .5rem 1.5rem;
+        border: 2px solid var(--tertiary-text-color);
+        border-right: transparent;
+        background-color: transparent;
+
+        transition: .2s all;
+        
+        &:focus {
+            outline: none;
+            transform: translateY(-.2rem);
+            box-shadow: 0 1rem 3rem rgba(0,0,0,.2);
+        }
+    }
+    
+    &__input:focus + &__button {
+        outline: none;
+        transform: translateY(-.2rem);
+        box-shadow: 0 1rem 3rem rgba(0,0,0,.2);
+    }
+    
+    &__button {
+        width: 4rem;
+        border: 2px solid var(--tertiary-text-color);
+        border-left: transparent;
+        align-self: stretch;
+        background-color: transparent;
+        transition: .2s all;
+        
+        cursor: pointer;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    &__icon {
+        fill: #131313;
+    }
+}
+
+
+////////////////////////////////////
+// USER COMPONENT
+.user {
+    padding: 3rem 4.5rem;
+    
+    display: flex;
+    align-items: center;
+    
+    margin-bottom: 1rem;
+    
+    &__photo {
+        width: 3rem;
+        height: 3rem;
+        border: none;
+        border-radius: 50%;
+        margin-right: 2rem;
+    }
+    
+    &__name {
+        font-weight: 700;
+    }
+}
+
+
+
+
+////////////////////////////////////
+// OPTIONS COMPONENT
+.options {
+    display: flex;
+    flex-direction: column;
+    
+    &:not(:last-child) {
+        margin-bottom: 4rem;
+    }
+    
+}
+
+
+
+
+////////////////////////////////////
+// NAV-LIST COMPONENT
+.nav {
+    list-style: none;
+    
+    &__item {
+        position: relative;
+        &:not(:last-child) {
+            margin-bottom: .5rem;
+        }
+    }
+
+    &__item::before {
+        content: "";
+        width: 3px;
+        height: 50%;
+        background-color: var(--primary-color-dark);
+        
+        position: absolute;
+        top: 23%;
+        left: 10%; 
+        
+        transform: scaleY(0);
+        transition: all .2s;
+    }
+    
+    &__item:hover::before {
+        transform: scaleY(1);
+    }
+    
+    &__link:link,
+    &__link:visited {
+        text-decoration: none;
+        color: inherit;
+        
+        padding: 1rem 4.5rem;
+        
+        display: flex;
+        align-items: center;
+        
+    }
+    
+    &__icon-background {
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+        background-color: var(--secondary-color);
+        margin-right: 2rem;
+        
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }  
+}
+
+
+
+
+////////////////////////////////////
+// DETAILS COMPONENT
+.details {
+    display: flex;
+    align-items: center;
+    
+    &__heading {
+        font-weight: 300;
+        margin-right: 1rem;
+    }
+
+    &__icon {
+        fill: currentColor;
+        transform: translateY(.2rem);
+    }
+}
+
+
+
+
+////////////////////////////////////
+// RESULT COMPONENT
+.result {
+    list-style: none;
+    margin-top: 2rem;
+    font-size: var(--font-size-1);
+
+    height: 50rem;
+    overflow-y: scroll;
+
+
+    // SCROLLBAR STYLING
+    &::-webkit-scrollbar {
+        background-color: transparent;
+        width: 1rem;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: var(--scrollbar-color-second);
+        border-radius: 100px;
+    }
+    
+    &__link:link,
+    &__link:visited {
+        color: inherit;
+        text-decoration: none;
+        
+        display: flex;
+        align-items: center;
+
+        padding: 1rem 4.5rem;   
+    
+    }
+    
+    &__photo {
+        display: inline-block;
+        width: 6rem;
+        height: 6rem;
+        border: none;
+        margin-right: 2rem; 
+        
+        transition: all .2s;
+    }
+
+    &__link:hover &__photo {
+        filter: brightness(85%);
+    }
+    
+    &__details {
+        margin-right: auto;
+    }
+    
+    &__track {
+        font-weight: 700;
+        margin-bottom: .3rem;
+        letter-spacing: 1px;
+    }
+    
+    &__icon-background {
+        width: 2rem;
+        height: 2rem;
+        background-color: var(--primary-color-dark);
+        border-radius: 50%;
+        
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+
+
+    
+////////////////////////////////////
+// SONG DETAILS COMPONENT
+.song-details {
+    padding: 1.5rem 4.5rem;  
+    
+    display: flex;
+    align-items: center;
+    
+    &__heading {
+        font-weight: 300;
+        margin-right: auto;
+    }
+
+    &__button {
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        margin-right: 3rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &:focus {
+            outline: none;
+        }
+    }
+    
+    &__icon {
+        transition: fill .4s 
+                    transform .1s cubic-bezier(0.7, -0.85, 0.265, 2);
+
+        &:hover {
+            fill: var(--primary-color);
+        }
+        
+        &:active {
+            transform: scale(1.07);
+        }
+    }
+}
+
+
+////////////////////////////////////
+// LYRICS COMPONENT
+.lyrics {
+    font-size: var(--font-size-1);
+    font-family: var(--main-font);
+    font-weight: 200;
+
+    color: var(--primary-text-color); 
+
+    padding: 1rem 4.5rem;
+    height: 50rem;
+    overflow-y: scroll;
+
+
+    // SCROLLBAR STYLING
+    &::-webkit-scrollbar {
+        background-color: transparent;
+        width: 1rem;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: var(--scrollbar-color);
+        border-radius: 100px;
+    }
+}
+
+
+////////////////////////////////////
+// SETTINGS COMPONENT
+.settings {
+
+    font-size: var(--font-size-1);
+    padding: 2rem 4.5rem;
+
+    height: 57rem;
+    display: none;
+    overflow-y: scroll;
+
+    // SCROLLBAR STYLING
+    &::-webkit-scrollbar {
+        background-color: transparent;
+        width: 1rem;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: var(--scrollbar-color);
+        border-radius: 100px;
+    }
+
+    &__form {
+        margin-top: 3rem;
+    }
+
+    &__heading {
+        font-weight: 300;
+    }
+
+    &__group {
+        display: flex;
+        align-items: center;
+
+        &:not(:last-child) {
+            margin-bottom: .4rem;
+        }
+
+        padding: .7rem 0;
+    }
+
+    &__label {
+        margin-right: auto;
+    }
+
+    &__input {
+        width: 7rem;
+        padding: .4rem .85rem;
+
+        color: inherit;
+
+        background-color: transparent;
+        border: 2px solid var(--scrollbar-color);
+
+        &:focus {
+            outline: none;
+        }
+
+        &--long {
+            width: 17.3rem;
+        }
+    }
+
+    &__button-group {
+        display: flex;
+        justify-content: center;
+        margin-top: 1rem;
+    }
+
+    &__button {
+        font-size: var(--font-size-2);
+        color: inherit;
+
+        padding: 1rem 2rem;
+        
+        border: none;
+        border-radius: 100px;
+        
+        background-image: linear-gradient(to right, var(--primary-color), var(--primary-color-dark));
+        cursor: pointer;
+
+        &:hover {
+            background-image: linear-gradient(to left, var(--primary-color), var(--primary-color-dark));
+        }
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    &__color-circle {
+        width: 2rem;
+        height: 2rem;
+        border: 1px solid var(--scrollbar-color);
+        border-radius: 50%;
+        margin-left: .5rem;
+        
+        &--1 {
+            background-color: var(--primary-color);    
+        }
+        
+        &--2 {
+            background-color: var(--secondary-color);    
+        }
+        
+        &--3 {
+            background-color: var(--primary-text-color);    
+        }
+        
+        &--4 {
+            background-color: var(--scrollbar-color);    
+        }
+        
+        &--5 {
+            background-color: var(--scrollbar-color-second);    
+        }
+
+        &--6 {
+            background-color: var(--primary-color-dark);    
+        }
+    }
+
+    &__checkbox {
+        display: none;
+    }
+
+    &__checkbox-label {
+        margin-right: 3rem;
+        cursor: pointer;
+    }
+
+    &__checkbox-button {
+        width: 5rem;
+        height: 2.5rem;
+
+        border: 2px solid var(--primary-color);
+        border-radius: 100px;
+        
+        display: inline-block;
+        position: relative;
+
+        &::after {
+            content: "\043E";
+            
+            width: 1.5rem;
+            height: 1.5rem;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            padding-right: .1rem;
+            
+            color: var(--secondary-color);
+            background-color: var(--primary-text-color);
+            
+            border: none;
+            border-radius: 50%;
+            
+            position: absolute;
+            top: .3rem;
+            left: .3rem;
+
+            transition: all .23s;
+        }
+    }
+
+    &__checkbox:checked ~ &__checkbox-label &__checkbox-button::after {
+        content: "\03B9";
+        transform: translateX(2.45rem);
+        padding-right: 0;
+    }
+}

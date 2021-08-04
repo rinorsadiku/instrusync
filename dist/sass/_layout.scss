@@ -1,0 +1,27 @@
+.app-view {
+    grid-row: container-row-start / container-row-end;
+    grid-column: container-column-start / container-column-end;
+
+
+    display: grid;
+    grid-template-columns: 1.6fr 3fr 1.6fr;
+    grid-template-areas: "cont-1 cont-2 cont-3" 
+}
+
+.profile {
+    // This is the same as $secondary-color, but in rgba form because we want to change the opacity
+    background-color: rgba(39, 39, 39, .5);
+    grid-area: cont-1;
+
+    font-size: var(--font-size-1);
+}
+
+.stream {
+    background-color: var(--secondary-color);
+    grid-area: cont-2;
+}
+
+.cue {
+    background-color: var(--primary-color);
+    grid-area: cont-3;
+}
